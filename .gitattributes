@@ -1,0 +1,18 @@
+# C++ Source Files
+*.cc text eol=lf
+*.h text eol=lf
+
+# Documentation
+*.md text eol=lf
+README.* text eol=lf
+
+# clang-format
+.clang-format text eol=lf
+
+# git
+.gitattributes   text eol=lf
+.gitignore text eol=lf
+
+# Bazel
+WORKSPACE text eol=lf
+BUILD text eol=lf
