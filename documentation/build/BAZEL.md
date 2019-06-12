@@ -22,6 +22,11 @@ You can build all targets for this project with the command from your terminal o
 
     `bazel build //...`
 
+## References
+
+1. [Bazel Protocol Buffers](https://github.com/protocolbuffers/protobuf/blob/master/examples/WORKSPACE)
+2. [Protocol Buffer Conventions](https://github.com/bowlofstew/proto_library/blob/master/src/BUILD)
+
 ## Author(s)
 
 Stewart Henderson
