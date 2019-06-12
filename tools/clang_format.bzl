@@ -1,3 +1,5 @@
+# Copyright 2019 Stewart Henderson. All rights reserved.
+# 
 # Credit: https://jin.crypt.sg/articles/bazel-pretty-print.html
 # from [Jin](https://stackoverflow.com/users/521209/jin)
 

@@ -1,3 +1,4 @@
+// Copyright 2019 Stewart Henderson. All rights reserved.
 #pragma once
 
 #include "quickfix/Application.h"

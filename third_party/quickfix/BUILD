@@ -1,3 +1,5 @@
+# Copyright 2019 Stewart Henderson. All rights reserved.
+
 package(default_visibility = ["//visibility:public"])
 
 licenses(["notice"])
