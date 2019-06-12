@@ -2,8 +2,8 @@
 
 # APIs
 
-* [FIX](./FIX/README.md)
-* [API](./API/README.md)
+* [FIX](./fix/README.md)
+* [API](./api/README.md)
 
 ## Authors
 
