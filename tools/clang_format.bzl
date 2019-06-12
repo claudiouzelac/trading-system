@@ -1,4 +1,5 @@
 # Credit: https://jin.crypt.sg/articles/bazel-pretty-print.html
+# from [Jin](https://stackoverflow.com/users/521209/jin)
 
 def clang_formatted_cc_binary(name, srcs, **kwargs):
     # Using a filegroup for code cleaniness
@@ -13,6 +14,24 @@ def clang_formatted_cc_binary(name, srcs, **kwargs):
     )
 
     native.cc_binary(
+        name = name,
+        srcs = [name + "_formatted_srcs"],
+        **kwargs
+    )
+
+def clang_formatted_cc_library(name, srcs, **kwargs):
+    # Using a filegroup for code cleaniness
+    native.filegroup(
+        name = name + "_unformatted_srcs",
+        srcs = srcs,
+    )
+
+    clang_format_srcs(
+        name = name + "_formatted_srcs",
+        srcs = [name + "_unformatted_srcs"],
+    )
+
+    native.cc_library(
         name = name,
         srcs = [name + "_formatted_srcs"],
         **kwargs

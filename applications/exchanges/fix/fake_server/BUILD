@@ -1,4 +1,7 @@
-load("//tools:clang_format.bzl", "clang_formatted_cc_binary")
+load("//tools:clang_format.bzl", 
+    "clang_formatted_cc_binary",
+    "clang_formatted_cc_library"
+)
 
 # [Bazel `visibility` attribute](https://docs.bazel.build/versions/master/be/common-definitions.html)
 
@@ -20,10 +23,29 @@ filegroup(
     ]),
 )
 
+clang_formatted_cc_library(
+    name = "applications_exchanges_fix_fake_server_library",
+    srcs = [
+        ":applications_exchanges_fix_fake_server_incs"
+    ],
+    hdrs = [
+        ":applications_exchanges_fix_fake_server_incs"
+    ],
+    strip_include_prefix = "incs",
+    linkstatic=1,
+    deps = [
+        "//third_party/quickfix:quickfix_lib",
+    ]
+)
+
 clang_formatted_cc_binary(
     name = "applications_exchanges_fix_fake_server_clang_format",
     srcs = [
         ":applications_exchanges_fix_fake_server_srcs",
+    ],
+    deps = [
+        ":applications_exchanges_fix_fake_server_library",
+        "//third_party/quickfix:quickfix_lib",
     ],
 )
 
