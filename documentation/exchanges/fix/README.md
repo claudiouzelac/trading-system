@@ -4,6 +4,10 @@
 
 FIX = Financial Information eXchange
 
+## Software Dependencies
+
+* [QuickFIX Third Party Dependency](./../../../third_party/quickfix)
+
 ## References
 
 1. [Wikipedia](https://en.wikipedia.org/wiki/Financial_Information_eXchange)
