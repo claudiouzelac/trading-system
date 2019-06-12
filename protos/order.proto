@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package entities; 
+
+message Order {
+    string symbol   = 1;
+    string currency = 2;
+    double quantity = 3;
+    double price    = 4;
+    string orderId  = 5;
+}
