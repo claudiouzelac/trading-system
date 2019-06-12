@@ -25,5 +25,7 @@ before_install:
 script:
 # QuickFIX external dependency build validation
 - bazel build //third_party/quickfix:quickfix_lib
+# librdkafka external dependency build validation
+- bazel build //third_party/librdkafka:librdkafka
 # Protocol Buffer build validation
 - bazel build //protos:exchange_cc_proto

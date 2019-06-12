@@ -16,6 +16,7 @@ RULES_FOREIGN_CC_COMMIT = "5f9879c7ec694248ad60a6b2e43e24898cfbf33e"
 # Dependency Commits
 ########################################################################
 QUICKFIX_COMMIT             = "dab6d9f937e3bc700a2e8be681936b0069857609"
+LIBRDKAFKA_COMMIT           = "4070d59258e568e9360a920ac781b7a040b71828"
 
 ########################################################################
 # Bazel Rules
@@ -39,6 +40,13 @@ new_git_repository(
     remote = "https://github.com/quickfix/quickfix.git",
     commit = QUICKFIX_COMMIT,
     build_file_content = """filegroup(name = "libquickfix_all", srcs = glob(["**"]), visibility = ["//visibility:public"])"""
+)
+
+new_git_repository(
+    name = "org_librdkafka",
+    remote = "https://github.com/edenhill/librdkafka.git",
+    commit = LIBRDKAFKA_COMMIT,
+    build_file_content = """filegroup(name = "librdkafka_all", srcs = glob(["**"]), visibility = ["//visibility:public"])"""
 )
 
 # This com_google_protobuf repository is required for proto_library rule.
