@@ -2,9 +2,9 @@
 
 #include "quickfix/Application.h"
 #include "quickfix/MessageCracker.h"
-#include "quickfix/Values.h"
-#include "quickfix/Utility.h"
 #include "quickfix/Mutex.h"
+#include "quickfix/Utility.h"
+#include "quickfix/Values.h"
 
 #include "fix40.h"
 #include "fix41.h"
@@ -14,15 +14,13 @@
 #include "fix50.h"
 
 namespace applications {
-    namespace exchanges {
-        namespace fix {
-            class Server : public FIX::Application,
-                    public FIX::MessageCracker
-            {
-            public: 
-                void onLogon( const FIX::SessionID& sessionID );
-                void onLogout( const FIX::SessionID& sessionID );
-            };
-        }
-    }
+namespace exchanges {
+namespace fix {
+class Server : public FIX::Application, public FIX::MessageCracker {
+public:
+  void onLogon(const FIX::SessionID &sessionID);
+  void onLogout(const FIX::SessionID &sessionID);
+};
+}
+}
 }

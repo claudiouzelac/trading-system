@@ -13,6 +13,7 @@ def clang_formatted_cc_binary(name, srcs, **kwargs):
         srcs = [name + "_unformatted_srcs"],
     )
 
+    # [Bazel C and C++ Rules](https://docs.bazel.build/versions/0.26.0/be/c-cpp.html)
     native.cc_binary(
         name = name,
         srcs = [name + "_formatted_srcs"],
@@ -31,6 +32,7 @@ def clang_formatted_cc_library(name, srcs, **kwargs):
         srcs = [name + "_unformatted_srcs"],
     )
 
+    # [Bazel C and C++ Rules](https://docs.bazel.build/versions/0.26.0/be/c-cpp.html)
     native.cc_library(
         name = name,
         srcs = [name + "_formatted_srcs"],

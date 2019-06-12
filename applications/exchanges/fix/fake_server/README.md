@@ -18,16 +18,7 @@ Bazel can compile this target with the follow command from a command terminal
 from the root directory of this project:
 
 ```
-bazel build //applications/exchanges/fix/fake_server:applications_exchanges_fix_fake_server
-```
-
-## Formatting the Source Code
-
-There is built in support to format the source code to ensure consistent formatting.  You can
-invoke it with the following command:
-
-```
-bazel build //applications/exchanges/fix/fake_server:applications_exchanges_fix_fake_server_clang_format
+bazel build //applications/exchanges/fix/fake_server:applications_exchanges_fix_fake_server --subcommands
 ```
 
 ## Dependencies

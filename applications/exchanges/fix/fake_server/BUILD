@@ -39,25 +39,12 @@ clang_formatted_cc_library(
 )
 
 clang_formatted_cc_binary(
-    name = "applications_exchanges_fix_fake_server_clang_format",
+    name = "applications_exchanges_fix_fake_server",
     srcs = [
         ":applications_exchanges_fix_fake_server_srcs",
     ],
     deps = [
         ":applications_exchanges_fix_fake_server_library",
-        "//third_party/quickfix:quickfix_lib",
-    ],
-)
-
-# [Bazel C and C++ Rules](https://docs.bazel.build/versions/0.26.0/be/c-cpp.html)
-
-cc_binary(
-    name = "applications_exchanges_fix_fake_server",
-    srcs = [
-        ":applications_exchanges_fix_fake_server_srcs",
-        ":applications_exchanges_fix_fake_server_incs"
-    ],
-    deps = [
         "//third_party/quickfix:quickfix_lib",
     ],
 )
