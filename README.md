@@ -10,6 +10,7 @@ To create an example trading system that will:
 * Provide examples for implementing algorithms
 * Provide examples for working with multiple instruments (spot currencies, futures, etc)
 * Provide examples of building multi-language codebase with Bazel.
+* Expand the scope of the CI process
 
 ### Vendor API Goals
 
