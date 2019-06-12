@@ -1,5 +1,7 @@
 # Trading System
 
+[![Build Status](https://travis-ci.org/bowlofstew/trading-system.svg?branch=master)](https://travis-ci.org/bowlofstew/trading-system)
+
 ## Project Goals
 
 To create an example trading system that will:
