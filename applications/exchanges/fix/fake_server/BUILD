@@ -1,3 +1,5 @@
+# Copyright 2019 Stewart Henderson. All rights reserved.
+
 load("//tools:clang_format.bzl", 
     "clang_formatted_cc_binary",
     "clang_formatted_cc_library"
