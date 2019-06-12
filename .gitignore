@@ -3,3 +3,4 @@ bazel-*
 
 # VisualStudio Code
 .vs
+.vscode
