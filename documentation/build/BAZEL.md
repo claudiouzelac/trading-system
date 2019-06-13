@@ -22,6 +22,10 @@ You can build all targets for this project with the command from your terminal o
 
     `bazel build //...`
 
+## Bazel Coverage
+
+* [Roadmap](https://bazel.build/roadmaps/coverage.html)
+
 ## References
 
 1. [Bazel Protocol Buffers](https://github.com/protocolbuffers/protobuf/blob/master/examples/WORKSPACE)

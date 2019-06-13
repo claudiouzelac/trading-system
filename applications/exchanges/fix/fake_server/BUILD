@@ -29,6 +29,7 @@ filegroup(
     name = "applications_exchanges_fix_fake_server_test_srcs",
     srcs = glob([
         "tests/*.cc",
+        "tests/*.h"
     ]),
 )
 
@@ -54,7 +55,8 @@ clang_formatted_cc_binary(
     ],
     deps = [
         ":applications_exchanges_fix_fake_server_library",
-        "//third_party/quickfix:quickfix_lib",
+        "//applications/exchanges/fix/base:applications_exchanges_fix_base_library",
+        "//applications/exchanges/fix/quickfix:applications_exchanges_fix_quickfix_library",
     ],
 )
 
