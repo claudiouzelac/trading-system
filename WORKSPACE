@@ -20,6 +20,7 @@ QUICKFIX_COMMIT             = "dab6d9f937e3bc700a2e8be681936b0069857609"
 LIBRDKAFKA_COMMIT           = "4070d59258e568e9360a920ac781b7a040b71828"
 GLOG_COMMIT                 = "fc87161c962f11633a1bc5f278e038b05e8c8ed5"
 GOOGLE_TEST_COMMIT          = "3f5b5b8f8493a03fa25f1e4a7eae7678514a431d"
+GOOGLE_BENCHMARK_COMMIT     = "7d856b03047e7bf09ccc9e9878e299493541b468"
 
 ########################################################################
 # Bazel Rules
@@ -54,6 +55,12 @@ git_repository(
     name = "com_github_google_test",
     remote = "https://github.com/google/googletest.git",
     commit = GOOGLE_TEST_COMMIT,
+)
+
+git_repository(
+    name = "com_github_google_benchmark",
+    remote = "https://github.com/google/benchmark.git",
+    commit = GOOGLE_BENCHMARK_COMMIT,
 )
 
 new_git_repository(
