@@ -32,6 +32,7 @@ You can build all targets for this project with the command from your terminal o
 6. [Writing Bazel rules: library rule, depsets, providers](https://jayconrod.com/posts/107/writing-bazel-rules--library-rule--depsets--providers)
 7. [Migrating to Bazel: Part 1](https://jayconrod.com/posts/97/migrating-to-bazel--part-1)
 8. [Migrating to Bazel: Part 2](https://jayconrod.com/posts/98/migrating-to-bazel--part-2)
+9. [Awesome Bazel](https://awesomebazel.com/)
 
 ## Author(s)
 

@@ -1,5 +1,5 @@
 # Copyright 2019 Stewart Henderson. All rights reserved.
-# 
+#
 # [Bazel Workspace Concepts](https://docs.bazel.build/versions/0.26.0/build-ref.html#workspace)
 
 workspace(name = "com_github_bowlofstew_tradingsystem")
@@ -10,7 +10,8 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 ########################################################################
 # Bazel Rules Commits
 ########################################################################
-RULES_FOREIGN_CC_COMMIT = "5f9879c7ec694248ad60a6b2e43e24898cfbf33e"
+RULES_FOREIGN_CC_COMMIT = "0f0c0da3a1c45f3162dcd87d0fc1278804e435bb"
+RULES_BOOST_COMMIT      = "417642961150e987bc1ac78c7814c617566ffdaa"
 
 ########################################################################
 # Dependency Commits
@@ -29,6 +30,12 @@ git_repository(
     name = "rules_foreign_cc",
     remote = "https://github.com/bazelbuild/rules_foreign_cc.git",
     commit = RULES_FOREIGN_CC_COMMIT,
+)
+
+git_repository(
+    name = "com_github_nelhage_rules_boost",
+    commit = RULES_BOOST_COMMIT,
+    remote = "https://github.com/nelhage/rules_boost",
 )
 
 ########################################################################
@@ -83,12 +90,10 @@ http_archive(
     urls = ["https://github.com/protocolbuffers/protobuf/archive/javalite.zip"],
 )
 
-load("@rules_foreign_cc//:workspace_definitions.bzl", 
-    "rules_foreign_cc_dependencies"
-)
-
+load("@rules_foreign_cc//:workspace_definitions.bzl","rules_foreign_cc_dependencies")
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
 
 protobuf_deps()
-
 rules_foreign_cc_dependencies()
+boost_deps()

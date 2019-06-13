@@ -13,7 +13,9 @@ namespace fix {
 class Engine {
 public:
     Engine() = default;
+    void Activate(FIX::Application &app);
+	void Deactivate();
 };
 }
 }
-} 
+}
