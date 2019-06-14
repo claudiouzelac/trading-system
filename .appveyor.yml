@@ -7,7 +7,7 @@ environment:
     - compiler: msvc-15-seh
       build_system: bazel
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-enabled_on_pr: yes
+      enabled_on_pr: yes
 
 configuration:
   - Debug
