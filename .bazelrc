@@ -1,0 +1,15 @@
+# Copyright 2019 Stewart Henderson. All rights reserved.
+#
+# [Bazel RC Information](https://docs.bazel.build/versions/master/user-manual.html#where-are-the-bazelrc-files)
+#
+# Import legacy .bazelrc file.
+#   [Legacy .bazelrc](https://github.com/bazelbuild/bazel/issues/6319)
+# 
+# For this work, we will use the legacy location
+# for importing the base settings and then a user 
+# can specify overrides or addition settings by placing 
+# an additional set of settings in a file of the form
+# of {USER_NAME}.bazelrc in the root directory
+import %workspace%/tools/bazel.rc
+
+try-import %workspace%/user.bazelrc
