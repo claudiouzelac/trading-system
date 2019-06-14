@@ -6,10 +6,11 @@
 * [readthedocs](https://readthedocs.org/)
     * [rules_haskell](https://github.com/tweag/rules_haskell)
     * [rules_haskell - readthedocs site](https://rules-haskell.readthedocs.io/en/latest/)
+* [Appveyor Support for Windows Builds](https://www.appveyor.com/)
 
 ## Design Items
 
-* Design Cover market data ingestion and persistence
+* Design market data ingestion and persistence
 
 ## Author(s)
 
