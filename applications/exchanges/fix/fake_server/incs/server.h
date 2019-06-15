@@ -1,24 +1,16 @@
 // Copyright 2019 Stewart Henderson. All rights reserved.
 #pragma once
 
-#include "quickfix/Application.h"
-#include "quickfix/MessageCracker.h"
-#include "quickfix/Mutex.h"
-#include "quickfix/Utility.h"
-#include "quickfix/Values.h"
-
-#include "fix40.h"
-#include "fix41.h"
-#include "fix42.h"
-#include "fix43.h"
-#include "fix44.h"
-#include "fix50.h"
+#include "quickfix_precompiled.h"
 
 namespace applications {
 namespace exchanges {
 namespace fix {
+
 class Server : public FIX::Application, public FIX::MessageCracker {
 public:
+  Server() = default;
+
   void onLogon(const FIX::SessionID &sessionID);
   void onLogout(const FIX::SessionID &sessionID);
   void onCreate(const FIX::SessionID &);

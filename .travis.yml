@@ -1,7 +1,9 @@
 # [Travis CI Documentation](https://docs.travis-ci.com/)
 
 dist: xenial
-
+env:
+  global:
+    - BAZEL_VERSION=0.26.1
 addons:
   apt:
     sources:
@@ -17,8 +19,13 @@ addons:
       - clang-format-3.8
 
 before_install:
-  - wget https://github.com/bazelbuild/bazel/releases/download/0.26.1/bazel_0.26.1-linux-x86_64.deb
-  - sudo dpkg -i bazel_0.26.1-linux-x86_64.deb
+  - wget https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel_${BAZEL_VERSION}-linux-x86_64.deb
+  - sudo dpkg -i bazel_${BAZEL_VERSION}-linux-x86_64.deb
 
 script:
+# QuickFIX external dependency build validation
 - bazel build //third_party/quickfix:quickfix_lib
+# librdkafka external dependency build validation
+- bazel build //third_party/librdkafka:librdkafka
+# Protocol Buffer build validation
+- bazel build //protos:exchange_cc_proto
