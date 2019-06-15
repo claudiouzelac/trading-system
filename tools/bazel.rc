@@ -1,0 +1,8 @@
+# Copyright 2019 Stewart Henderson. All rights reserved.
+#
+# Default test options.
+test --test_output=errors
+test --test_summary=terse
+#
+# Default to an optimized build.
+build -c opt
