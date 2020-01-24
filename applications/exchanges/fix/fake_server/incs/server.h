@@ -8,7 +8,7 @@ namespace exchanges {
 namespace fix {
 
 class Server : public FIX::Application, public FIX::MessageCracker {
-public:
+ public:
   Server() = default;
 
   void onLogon(const FIX::SessionID &sessionID);
@@ -27,6 +27,6 @@ public:
                                              FIX::IncorrectTagValue,
                                              FIX::UnsupportedMessageType);
 };
-}
-}
-}
+}  // namespace fix
+}  // namespace exchanges
+}  // namespace applications

@@ -16,8 +16,8 @@ RULES_BOOST_COMMIT      = "417642961150e987bc1ac78c7814c617566ffdaa"
 ########################################################################
 # Dependency Commits
 ########################################################################
-QUICKFIX_COMMIT             = "dab6d9f937e3bc700a2e8be681936b0069857609"
-LIBRDKAFKA_COMMIT           = "4070d59258e568e9360a920ac781b7a040b71828"
+QUICKFIX_COMMIT             = "6908dc8c1084eeb7af7f322d35216e9965684489"
+LIBRDKAFKA_COMMIT           = "da83c93434f190cd9c24ba8b7c8e6e6911c3b350"
 GLOG_COMMIT                 = "fc87161c962f11633a1bc5f278e038b05e8c8ed5"
 GOOGLE_TEST_COMMIT          = "3f5b5b8f8493a03fa25f1e4a7eae7678514a431d"
 GOOGLE_BENCHMARK_COMMIT     = "7d856b03047e7bf09ccc9e9878e299493541b468"

@@ -33,6 +33,11 @@ To create an example trading system that will:
 * Currency support
     * Book Aggregation across exchange support as well.
 
+## Development Setup
+
+1. `pip install pre-commit`
+2. `pre-commit install`
+
 ## License
 
 [![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
