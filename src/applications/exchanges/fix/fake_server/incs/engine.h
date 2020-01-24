@@ -1,0 +1,25 @@
+// Copyright 2019 Stewart Henderson. All rights reserved.
+
+#pragma once
+
+#include <string>
+
+#include "quickfix_precompiled.h"
+#include "engine_type.h"
+
+namespace applications {
+namespace exchanges {
+namespace fix {
+
+class Engine {
+public:
+    Engine() = default;
+    void Activate(FIX::Application &app);
+	void Deactivate();
+private:
+    FIX::SessionSettings _sessionSettings;
+    FIX::Dictionary _dictionary;
+};
+}
+}
+}

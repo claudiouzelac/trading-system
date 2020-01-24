@@ -12,6 +12,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 ########################################################################
 RULES_FOREIGN_CC_COMMIT = "0f0c0da3a1c45f3162dcd87d0fc1278804e435bb"
 RULES_BOOST_COMMIT      = "417642961150e987bc1ac78c7814c617566ffdaa"
+RULES_PROTOCOL_COMMIT   = "bedc40cd47b43dde857a7720066aadcf76c7dd3b"
 
 ########################################################################
 # Dependency Commits
@@ -39,6 +40,12 @@ git_repository(
     name = "com_github_nelhage_rules_boost",
     commit = RULES_BOOST_COMMIT,
     remote = "https://github.com/nelhage/rules_boost",
+)
+
+git_repository(
+    name = "build_stack_rules_proto",
+    commit = RULES_PROTOCOL_COMMIT,
+    remote = "https://github.com/stackb/rules_proto",
 )
 
 ########################################################################
@@ -114,7 +121,9 @@ http_archive(
 load("@rules_foreign_cc//:workspace_definitions.bzl","rules_foreign_cc_dependencies")
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
+load("@build_stack_rules_proto//cpp:deps.bzl", "cpp_proto_compile")
 
 protobuf_deps()
+cpp_proto_compile()
 rules_foreign_cc_dependencies()
 boost_deps()
