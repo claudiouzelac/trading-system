@@ -1,10 +1,12 @@
 load("@build_stack_rules_proto//cpp:cpp_proto_compile.bzl", "cpp_proto_compile")
 
 proto_library(
-    name = "person_proto",
+    name = "risk_proto",
     srcs = [
         "edge.proto",
-        "bankroll.proto"
+        "bankroll.proto",
+        "asset.proto",
+        "portfolio.proto",
     ],
     visibility = [
         "//visibility:public",
@@ -13,8 +15,8 @@ proto_library(
     ],
 )
 
-# bazel build //src/libraries/protos:trading_cpp_proto
+# bazel build //src/libraries/protos/risk:trading_risk_cpp_proto
 cpp_proto_compile(
-    name = "trading_cpp_proto",
-    deps = [":person_proto"],
+    name = "trading_risk_cpp_proto",
+    deps = [":risk_proto"],
 )
