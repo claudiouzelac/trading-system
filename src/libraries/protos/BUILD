@@ -3,7 +3,8 @@ load("@build_stack_rules_proto//cpp:cpp_proto_compile.bzl", "cpp_proto_compile")
 proto_library(
     name = "person_proto",
     srcs = [
-        "person.proto",
+        "edge.proto",
+        "bankroll.proto"
     ],
     visibility = [
         "//visibility:public",

@@ -44,6 +44,13 @@ repos:
         - etc/license-header
         - --comment-style
         - //
+    -   id: insert-license
+        files: \.proto
+        args:
+        - --license-filepath
+        - etc/license-header
+        - --comment-style
+        - //
 -   repo: https://github.com/Yelp/detect-secrets
     rev: v0.13.0
     hooks:

@@ -1,0 +1,9 @@
+// Copyright 2019 Stewart Henderson. All rights reserved.
+
+syntax = "proto3";
+
+package trading.protos;
+
+message BankRoll {
+    double amount = 1;
+}
