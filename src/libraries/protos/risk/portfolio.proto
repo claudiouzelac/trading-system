@@ -1,0 +1,12 @@
+// Copyright 2019 Stewart Henderson. All rights reserved.
+
+syntax = "proto3";
+
+package trading.protos;
+
+import "src/libraries/protos/risk/asset.proto";
+
+message Portfolio {
+    string name = 1;
+    repeated Asset asset = 3;
+}
