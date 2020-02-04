@@ -1,0 +1,15 @@
+// Copyright 2019 Stewart Henderson. All rights reserved.
+
+syntax = "proto3";
+
+package trading.protos;
+
+import "src/libraries/protos/risk/asset.proto";
+import "src/libraries/protos/risk/venue.proto";
+
+message TradePrice {
+    Asset asset     =   1;
+    Venue venue     =   2;
+    double price    =   3;
+    double amount   =   4;
+}

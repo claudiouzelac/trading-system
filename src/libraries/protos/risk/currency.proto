@@ -1,0 +1,11 @@
+// Copyright 2019 Stewart Henderson. All rights reserved.
+
+syntax = "proto3";
+
+package trading.protos;
+
+import "src/libraries/protos/risk/tradeprice.proto";
+
+message Currency {
+    TradePrice price = 1;
+}

@@ -23,9 +23,7 @@ before_install:
   - sudo dpkg -i bazel_${BAZEL_VERSION}-linux-x86_64.deb
 
 script:
-# QuickFIX external dependency build validation
-- bazel build //third_party/quickfix:quickfix_lib
-# librdkafka external dependency build validation
-- bazel build //third_party/librdkafka:librdkafka
 # Protocol Buffer build validation
 - bazel build //protos:exchange_cc_proto
+# Currency Arbitrage Library
+- bazel build //src/libraries/pricing/currency/spot/arbitrage:libraries_pricing_currency_spot_arbitrage_library
