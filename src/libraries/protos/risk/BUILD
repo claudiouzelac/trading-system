@@ -7,6 +7,9 @@ proto_library(
         "bankroll.proto",
         "asset.proto",
         "portfolio.proto",
+        "currency.proto",
+        "tradeprice.proto",
+        "venue.proto"
     ],
     visibility = [
         "//visibility:public",

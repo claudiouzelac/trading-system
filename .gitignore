@@ -1,6 +1,9 @@
-# Bazel 
+# Bazel
 bazel-*
 
 # VisualStudio Code
 .vs
 .vscode
+
+# OSX Filesystem
+.DS_Store
