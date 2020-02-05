@@ -9,14 +9,24 @@ load(
     "py_test",
 )
 
-load("@libraries_pricing_currency_spot_arbitrage//:requirements.bzl", "requirement")
+load("@blackjack_library//:requirements.bzl", "requirement")
 
 PY_DEPENDENCIES = [
-    requirement("structlog"),
 ]
 
 py_library(
-    name = "libraries_models",
+    name = "blackjack_library",
     srcs = glob(["src/*.py"]),
     deps = PY_DEPENDENCIES,
+)
+
+py_test(
+    name = "blackjack_tests",
+    srcs = glob([
+        "tests/*.py",
+        ]),
+    deps = [
+        ":blackjack_library"
+    ],
+    main = "tests/main.py"
 )

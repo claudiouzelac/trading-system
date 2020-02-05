@@ -153,7 +153,12 @@ pip3_import(
    requirements = "//src/libraries/pricing/currency/spot/arbitrage:requirements.txt",
 )
 
+pip3_import(
+   name = "blackjack_library",
+   requirements = "//src/libraries/blackjack:requirements.txt",
+)
 
-load("@libraries_pricing_currency_spot_arbitrage//:requirements.bzl", "pip_install")
+
+load("@blackjack_library//:requirements.bzl", "pip_install")
 
 pip_install()
