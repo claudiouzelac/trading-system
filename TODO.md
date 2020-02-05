@@ -13,6 +13,8 @@
 * Investigate [bazel-coverage-report tool](https://github.com/hchauvin/bazel-coverage-report)
 * Add [FIX8](https://github.com/fix8/fix8) support
 * Dispersion tradinng example
+* Price collection from ftp://ftp.cmegroup.com/
+* Add support for https://github.com/google/tf-quant-finance
 
 ## Design Items
 
