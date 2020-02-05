@@ -9,6 +9,8 @@
 
 `bazel build //src/libraries/pricing/currency/spot/arbitrage:libraries_pricing_currency_spot_arbitrage_library`
 
+`bazel build //src/libraries/pricing/currency/spot/arbitrage:libraries_pricing_currency_spot_arbitrage`
+
 ## Author(s)
 
 Stewart Henderson

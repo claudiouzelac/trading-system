@@ -18,6 +18,35 @@ filegroup(
     ]),
 )
 
+load(
+    "@rules_python//python:python.bzl",
+    "py_library",
+    "py_test",
+)
+
+load("@libraries_pricing_currency_spot_arbitrage//:requirements.bzl", "requirement")
+
+PY_DEPENDENCIES = [
+    requirement("structlog"),
+]
+
+py_library(
+    name = "libraries_pricing_currency_spot_arbitrage",
+    srcs = glob(["src/*.py"]),
+    deps = PY_DEPENDENCIES,
+)
+
+py_test(
+    name = "libraries_pricing_currency_spot_arbitrage_library_tests",
+    srcs = glob([
+        "tests/*.py",
+        ]),
+    deps = [
+        ":libraries_pricing_currency_spot_arbitrage_library"
+    ],
+    main = "tests/main.py"
+)
+
 cc_library(
     name = "libraries_pricing_currency_spot_arbitrage_library",
     srcs = [
@@ -28,5 +57,6 @@ cc_library(
     ],
     deps = [
         "//src/libraries/protos/risk:trading_risk_cpp_proto"
-    ]
+    ],
+    linkstatic=1
 )
