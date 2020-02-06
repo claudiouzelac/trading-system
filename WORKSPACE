@@ -125,6 +125,15 @@ http_archive(
     urls = ["https://github.com/protocolbuffers/protobuf/archive/javalite.zip"],
 )
 
+
+# GoogleTest/GoogleMock framework. Used by most unit-tests.
+http_archive(
+    name = "com_google_googletest",
+    sha256 = "5aaa5d566517cae711e2a3505ea9a6438be1b37fcaae0ebcb96ccba9aa56f23a", # #pragma: allowlist secret
+    strip_prefix = "googletest-b4d4438df9479675a632b2f11125e57133822ece",
+    urls = ["https://github.com/google/googletest/archive/b4d4438df9479675a632b2f11125e57133822ece.zip"],  # 2018-07-16
+)
+
 load("@rules_foreign_cc//:workspace_definitions.bzl","rules_foreign_cc_dependencies")
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
