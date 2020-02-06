@@ -11,7 +11,9 @@ namespace currency {
 namespace spot {
 namespace arbitrage {
 class Calculation {
-  double compute_spread(protos::Currency currency);
+ public:
+  double compute_spread(protos::Currency first, protos::Currency seconds,
+                        protos::Currency third);
 };
 
 }  // namespace arbitrage
