@@ -32,7 +32,7 @@ cc_library(
 cc_test(
     name = "libraries_pricing_currency_spot_arbitrage_library_tests",
     srcs = [
-        "tests/unit/calculation_tests.cc"
+        "tests/unit/calculation_tests.cc",
     ],
     size = "small",
     visibility = [
@@ -40,5 +40,6 @@ cc_test(
     ],
     deps = [
      "@com_google_googletest//:gtest_main",
+     ":libraries_pricing_currency_spot_arbitrage_library",
     ]
 )
