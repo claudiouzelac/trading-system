@@ -8,5 +8,5 @@ bazel-*
 # OSX Filesystem
 .DS_Store
 
-# MyPy
+# Mypy
 .mypy_cache

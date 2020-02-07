@@ -11,8 +11,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # Bazel Rules Commits
 ########################################################################
 RULES_FOREIGN_CC_COMMIT = "0f0c0da3a1c45f3162dcd87d0fc1278804e435bb"
-RULES_BOOST_COMMIT      = "417642961150e987bc1ac78c7814c617566ffdaa"
-RULES_PROTOCOL_COMMIT   = "bedc40cd47b43dde857a7720066aadcf76c7dd3b"
+RULES_BOOST_COMMIT      = "353a58c5d231293795e7b63c2c21467922153add" #pragma: allowlist secret
+RULES_PROTOCOL_COMMIT   = "bedc40cd47b43dde857a7720066aadcf76c7dd3b" #pragma: allowlist secret
+RULES_PYTHON_COMMIT     = "94677401bc56ed5d756f50b441a6a5c7f735a6d4" #pragma: allowlist secret
 
 ########################################################################
 # Dependency Commits
@@ -46,6 +47,12 @@ git_repository(
     name = "build_stack_rules_proto",
     commit = RULES_PROTOCOL_COMMIT,
     remote = "https://github.com/stackb/rules_proto",
+)
+
+git_repository(
+    name = "rules_python",
+    remote = "https://github.com/bazelbuild/rules_python.git",
+    commit = RULES_PYTHON_COMMIT,
 )
 
 ########################################################################
@@ -122,8 +129,38 @@ load("@rules_foreign_cc//:workspace_definitions.bzl","rules_foreign_cc_dependenc
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
 load("@build_stack_rules_proto//cpp:deps.bzl", "cpp_proto_compile")
+load("@build_stack_rules_proto//python:deps.bzl", "python_proto_library")
+load("@rules_python//python:pip.bzl", "pip_repositories", "pip3_import")
+load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
 
+pip_repositories()
 protobuf_deps()
 cpp_proto_compile()
 rules_foreign_cc_dependencies()
 boost_deps()
+python_proto_library()
+boost_deps()
+
+pip3_import(
+    name = "protobuf_py_deps",
+    requirements = "@build_stack_rules_proto//python/requirements:protobuf.txt",
+)
+
+load("@protobuf_py_deps//:requirements.bzl", protobuf_pip_install = "pip_install")
+
+protobuf_pip_install()
+
+pip3_import(
+   name = "libraries_pricing_currency_spot_arbitrage",
+   requirements = "//src/libraries/pricing/currency/spot/arbitrage:requirements.txt",
+)
+
+pip3_import(
+   name = "blackjack_library",
+   requirements = "//src/libraries/blackjack:requirements.txt",
+)
+
+
+load("@blackjack_library//:requirements.bzl", "pip_install")
+
+pip_install()
