@@ -30,7 +30,7 @@ cc_library(
 )
 
 cc_test(
-    name = "libraries_pricing_currency_spot_arbitrage_library_tests",
+    name = "libraries_pricing_currency_spot_arbitrage_library_unit_tests",
     srcs = [
         "tests/unit/calculation_tests.cc",
     ],
@@ -39,7 +39,16 @@ cc_test(
         "//visibility:private",
     ],
     deps = [
-     "@com_google_googletest//:gtest_main",
+     "@com_github_google_test//:gtest_main",
      ":libraries_pricing_currency_spot_arbitrage_library",
     ]
+)
+
+cc_test(
+  name = "libraries_pricing_currency_spot_arbitrage_library_performance_tests",
+  srcs = ["tests/performance/calculation_tests.cc"],
+  deps = [
+    "@com_github_google_benchmark//:benchmark_main",
+    ":libraries_pricing_currency_spot_arbitrage_library",
+  ]
 )
