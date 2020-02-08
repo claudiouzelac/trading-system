@@ -8,4 +8,9 @@ import "src/libraries/protos/risk/tradeprice.proto";
 
 message Currency {
     TradePrice price = 1;
+    // These symbols are used to check and enforce that a
+    // succesful arbitrage opportunity exists for the provided
+    // currencies in the arbitrage computation.
+    string numeratorSymbol = 2;
+    string demoniatorSymbol = 3;
 }

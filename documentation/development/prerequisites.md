@@ -6,7 +6,7 @@ TODO
 
 ## Windows
 
-TODO
+Windows of any type is presently not supported.
 
 ## OSX
 

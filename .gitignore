@@ -10,3 +10,6 @@ bazel-*
 
 # Mypy
 .mypy_cache
+
+# CLion
+.idea

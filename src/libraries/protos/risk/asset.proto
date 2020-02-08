@@ -6,4 +6,5 @@ package trading.protos;
 
 message Asset {
     string name = 1;
+    string symbol = 2;
 }
