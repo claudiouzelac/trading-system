@@ -23,11 +23,4 @@ before_install:
   - sudo dpkg -i bazel_${BAZEL_VERSION}-linux-x86_64.deb
 
 script:
-# QuickFix
-- bazel build //third_party/quickfix:quickfix_lib
-# Currency Arbitrage Library
-- bazel build //src/libraries/pricing/currency/spot/arbitrage:libraries_pricing_currency_spot_arbitrage_library
-# Blackjack library
-- bazel build //src/libraries/blackjack:blackjack_library
-# Currency Arbitrage Performance Tests
-- bazel test //src/libraries/pricing/currency/spot/arbitrage:libraries_pricing_currency_spot_arbitrage_library_performance_tests
+- bazel build //...
