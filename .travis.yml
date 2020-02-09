@@ -1,6 +1,11 @@
 # [Travis CI Documentation](https://docs.travis-ci.com/)
-
+language: cpp
+compiler: clang
 dist: xenial
+cache:
+  directories:
+    - $HOME/.bzrepos
+    - $HOME/.cache/bazel
 env:
   global:
     - BAZEL_VERSION=2.1.0
