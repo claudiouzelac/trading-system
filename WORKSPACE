@@ -25,6 +25,7 @@ GOOGLE_BENCHMARK_COMMIT     = "7d856b03047e7bf09ccc9e9878e299493541b468"
 RAPIDJSON_COMMIT            = "418331e99f859f00bdc8306f69eba67e8693c55e" # pragma: allowlist secret
 ZLIB_COMMIT                 = "cacf7f1d4e3d44d871b605da3b647f07d718623f" # pragma: allowlist secret
 GFLAGS_COMMIT               = "2e227c3daae2ea8899f49858a23f3d318ea39b57" # pragma: allowlist secret
+DOUBLE_CONVERSION_COMMIT    = "5fa81e88ef24e735b4283b8f7454dc59693ac1fc" # pragma: allowlist secret
 
 ########################################################################
 # Bazel Rules
@@ -83,6 +84,12 @@ git_repository(
     name = "com_github_google_benchmark",
     remote = "https://github.com/google/benchmark.git",
     commit = GOOGLE_BENCHMARK_COMMIT,
+)
+
+git_repository(
+    name = "com_github_google_double_conversion",
+    remote = "https://github.com/google/double-conversion.git",
+    commit = DOUBLE_CONVERSION_COMMIT,
 )
 
 new_git_repository(
