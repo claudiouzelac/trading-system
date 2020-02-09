@@ -3,7 +3,7 @@
 dist: xenial
 env:
   global:
-    - BAZEL_VERSION=0.26.1
+    - BAZEL_VERSION=2.1.0
 addons:
   apt:
     sources:
