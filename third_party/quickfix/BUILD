@@ -15,7 +15,10 @@ cmake_external(
         "make",
         "make install",
     ],
-    shared_libraries = [
-        "libquickfix.so",
-    ],
+    cache_entries = {
+       "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+       # Requires a third_party openssl dep.
+       "HAVE_SSL": "OFF",
+    },
+    shared_libraries = ["libquickfix.so"],
 )

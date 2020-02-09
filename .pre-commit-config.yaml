@@ -57,6 +57,16 @@ repos:
         args:
         - --license-filepath
         - etc/license-header
+    -   id: insert-license
+        files: \.bazelignore
+        args:
+        - --license-filepath
+        - etc/license-header
+    -   id: insert-license
+        files: \.bazelrc
+        args:
+        - --license-filepath
+        - etc/license-header
 -   repo: https://github.com/Yelp/detect-secrets
     rev: v0.13.0
     hooks:

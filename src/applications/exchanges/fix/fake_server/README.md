@@ -18,12 +18,14 @@ Bazel can compile this target with the follow command from a command terminal
 from the root directory of this project:
 
 ```
-bazel build //applications/exchanges/fix/fake_server:applications_exchanges_fix_fake_server --subcommands
+bazel build //src/applications/exchanges/fix/fake_server:applications_exchanges_fix_fake_server
 ```
 
-As part of this build, `clang-format` runs upon the code.  The formatted source code (headers, source files) are
-placed in the directory `bazel-out/k8-fastbuild/bin/applications/exchanges/fix/fake_server` with respect to the
-root directory of this project.  Upon inspection, you can copy them over as you desire to take the changes.
+## Running
+
+```
+bazel run //src/applications/exchanges/fix/fake_server:applications_exchanges_fix_fake_server
+```
 
 ## Testing
 

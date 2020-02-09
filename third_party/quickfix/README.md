@@ -17,11 +17,11 @@ from the root directory of this project:
 bazel build //third_party/quickfix:quickfix_lib
 ```
 
-### Example Build Outpu
+### Example Build Output
 
 ```
 bazel build //third_party/quickfix:quickfix_lib
-INFO: Analyzed target //third_party/quickfix:quickfix_lib (13 packages loaded, 1979 targets configured).
+INFO: Analyzed target //third_party/quickfix:quickfix_lib (0 packages loaded, 1 target configured).
 INFO: Found 1 target...
 INFO: From CcCmakeMakeRule third_party/quickfix/libquickfix/include:
 Target //third_party/quickfix:quickfix_lib up-to-date:
@@ -35,7 +35,7 @@ Target //third_party/quickfix:quickfix_lib up-to-date:
 
 ## CMake Logs
 
-You can view the CMake logs from in the following location with respect 
+You can view the CMake logs from in the following location with respect
 to the root directory of this project.
 
 ```

@@ -37,7 +37,6 @@ cc_library(
         ":applications_exchanges_fix_fake_server_incs"
     ],
     strip_include_prefix = "incs",
-    linkstatic=1,
     deps = [
         "//third_party/quickfix:quickfix_lib",
     ]
@@ -52,6 +51,7 @@ cc_binary(
         ":applications_exchanges_fix_fake_server_library",
         "//src/applications/exchanges/fix/base:applications_exchanges_fix_base_library",
         "//src/applications/exchanges/fix/quickfix:applications_exchanges_fix_quickfix_library",
+        "//third_party/quickfix:quickfix_lib",
     ],
 )
 
