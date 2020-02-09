@@ -1,4 +1,4 @@
-# Betting Strategies
+# Options Pricing
 
 ## Author(s)
 

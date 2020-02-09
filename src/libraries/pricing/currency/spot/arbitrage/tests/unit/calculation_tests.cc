@@ -36,18 +36,30 @@
  */
 TEST(FactorialTest, Negative) {
   trading::currency::spot::arbitrage::Calculation calc;
-  trading::protos::Currency first;
-  trading::protos::TradePrice firstPrice;
-  firstPrice.set_price(1.0985);
 
+  // First
+  trading::protos::Currency first;
+  trading::protos::TradePrice* firstPrice = new trading::protos::TradePrice();
+  firstPrice->set_price(1.0985);
+  first.set_allocated_price(firstPrice);
+  first.set_numeratorsymbol("EUR");
+  first.set_demoniatorsymbol("USD");
+
+  // Second
   trading::protos::Currency second;
-  trading::protos::TradePrice secondPrice;
-  secondPrice.set_price(0.849);
+  trading::protos::TradePrice* secondPrice = new trading::protos::TradePrice();
+  secondPrice->set_price(0.849);
+  second.set_numeratorsymbol("EUR");
+  second.set_demoniatorsymbol("GBP");
+  second.set_allocated_price(secondPrice);
 
   trading::protos::Currency third;
-  trading::protos::TradePrice thirdPrice;
-  thirdPrice.set_price(1.2936);
+  trading::protos::TradePrice* thirdPrice = new trading::protos::TradePrice();
+  thirdPrice->set_price(1.2936);
+  third.set_numeratorsymbol("GBP");
+  third.set_demoniatorsymbol("USD");
+  third.set_allocated_price(thirdPrice);
 
   auto spread = calc.compute_spread(first, second, third);
-  ASSERT_DOUBLE_EQ(0.00023360000000000001, spread);
+  ASSERT_DOUBLE_EQ(0.00023360000000005599, spread);
 }

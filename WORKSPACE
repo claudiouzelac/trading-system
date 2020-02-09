@@ -164,18 +164,3 @@ pip3_import(
 load("@protobuf_py_deps//:requirements.bzl", protobuf_pip_install = "pip_install")
 
 protobuf_pip_install()
-
-pip3_import(
-   name = "libraries_pricing_currency_spot_arbitrage",
-   requirements = "//src/libraries/pricing/currency/spot/arbitrage:requirements.txt",
-)
-
-pip3_import(
-   name = "blackjack_library",
-   requirements = "//src/libraries/blackjack:requirements.txt",
-)
-
-
-load("@blackjack_library//:requirements.bzl", "pip_install")
-
-pip_install()
