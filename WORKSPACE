@@ -26,6 +26,7 @@ RAPIDJSON_COMMIT            = "418331e99f859f00bdc8306f69eba67e8693c55e" # pragm
 ZLIB_COMMIT                 = "cacf7f1d4e3d44d871b605da3b647f07d718623f" # pragma: allowlist secret
 GFLAGS_COMMIT               = "2e227c3daae2ea8899f49858a23f3d318ea39b57" # pragma: allowlist secret
 DOUBLE_CONVERSION_COMMIT    = "5fa81e88ef24e735b4283b8f7454dc59693ac1fc" # pragma: allowlist secret
+ABSEIL_COMMIT               = "aa844899c937bde5d2b24f276b59997e5b668bde" # pragma: allowlist secret
 
 ########################################################################
 # Bazel Rules
@@ -80,6 +81,13 @@ git_repository(
     commit = GOOGLE_TEST_COMMIT,
 )
 
+# Abeil gtest binding
+git_repository(
+    name = "com_google_googletest",
+    remote = "https://github.com/google/googletest.git",
+    commit = GOOGLE_TEST_COMMIT,
+)
+
 git_repository(
     name = "com_github_google_benchmark",
     remote = "https://github.com/google/benchmark.git",
@@ -90,6 +98,12 @@ git_repository(
     name = "com_github_google_double_conversion",
     remote = "https://github.com/google/double-conversion.git",
     commit = DOUBLE_CONVERSION_COMMIT,
+)
+
+git_repository(
+    name = "com_google_absl",
+    remote = "https://github.com/abseil/abseil-cpp.git",
+    commit = ABSEIL_COMMIT,
 )
 
 new_git_repository(
