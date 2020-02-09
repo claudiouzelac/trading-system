@@ -19,11 +19,12 @@ RULES_PYTHON_COMMIT     = "94677401bc56ed5d756f50b441a6a5c7f735a6d4" #pragma: al
 # Dependency Commits
 ########################################################################
 QUICKFIX_COMMIT             = "6908dc8c1084eeb7af7f322d35216e9965684489"
-GLOG_COMMIT                 = "fc87161c962f11633a1bc5f278e038b05e8c8ed5"
+GLOG_COMMIT                 = "195d416e3b1c8dc06980439f6acd3ebd40b6b820" # pragma: allowlist secret`
 GOOGLE_TEST_COMMIT          = "3f5b5b8f8493a03fa25f1e4a7eae7678514a431d"
 GOOGLE_BENCHMARK_COMMIT     = "7d856b03047e7bf09ccc9e9878e299493541b468"
 RAPIDJSON_COMMIT            = "418331e99f859f00bdc8306f69eba67e8693c55e" # pragma: allowlist secret
 ZLIB_COMMIT                 = "cacf7f1d4e3d44d871b605da3b647f07d718623f" # pragma: allowlist secret
+GFLAGS_COMMIT               = "2e227c3daae2ea8899f49858a23f3d318ea39b57" # pragma: allowlist secret
 
 ########################################################################
 # Bazel Rules
@@ -62,8 +63,14 @@ git_repository(
 
 git_repository(
     name = "com_github_google_glog",
-    remote = "https://github.com/drigz/glog.git",
+    remote = "https://github.com/google/glog.git",
     commit = GLOG_COMMIT,
+)
+
+git_repository(
+    name = "com_github_gflags_gflags",
+    remote = "https://github.com/gflags/gflags.git",
+    commit = GFLAGS_COMMIT
 )
 
 git_repository(

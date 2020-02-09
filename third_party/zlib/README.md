@@ -28,6 +28,10 @@ INFO: 18 processes: 18 darwin-sandbox.
 INFO: Build completed successfully, 19 total actions
 ```
 
+## References
+
+1. [JPEG BUILD](https://chromium.googlesource.com/external/github.com/tensorflow/tensorflow/+/refs/heads/0.6.0/jpeg.BUILD)
+
 ## Author(s)
 
 Stewart Henderson

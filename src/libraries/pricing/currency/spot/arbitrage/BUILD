@@ -24,6 +24,7 @@ cc_library(
     hdrs = [":libraries_pricing_currency_spot_arbitrage_incs"],
     includes = [":libraries_pricing_currency_spot_arbitrage_incs"],
     deps = [
+        "@com_github_google_glog//:glog",
         "//src/libraries/protos/risk:trading_risk_cpp_proto"
     ],
     linkstatic=1
