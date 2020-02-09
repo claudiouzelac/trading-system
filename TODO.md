@@ -15,6 +15,9 @@
 * Dispersion tradinng example
 * Price collection from ftp://ftp.cmegroup.com/
 * Add support for https://github.com/google/tf-quant-finance
+* Add support for https://github.com/rigtorp/MPMCQueue
+* Add support for https://github.com/rigtorp/SPSCQueue
+* Add support for https://github.com/rigtorp/Seqlock
 
 ## Design Items
 
