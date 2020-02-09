@@ -17,7 +17,7 @@ from the root directory of this project:
 bazel build //third_party/quickfix:quickfix_lib
 ```
 
-### Example Build Outpu
+### Example Build Output
 
 ```
 bazel build //third_party/quickfix:quickfix_lib
@@ -35,7 +35,7 @@ Target //third_party/quickfix:quickfix_lib up-to-date:
 
 ## CMake Logs
 
-You can view the CMake logs from in the following location with respect 
+You can view the CMake logs from in the following location with respect
 to the root directory of this project.
 
 ```

@@ -19,10 +19,11 @@ RULES_PYTHON_COMMIT     = "94677401bc56ed5d756f50b441a6a5c7f735a6d4" #pragma: al
 # Dependency Commits
 ########################################################################
 QUICKFIX_COMMIT             = "6908dc8c1084eeb7af7f322d35216e9965684489"
-LIBRDKAFKA_COMMIT           = "da83c93434f190cd9c24ba8b7c8e6e6911c3b350"
 GLOG_COMMIT                 = "fc87161c962f11633a1bc5f278e038b05e8c8ed5"
 GOOGLE_TEST_COMMIT          = "3f5b5b8f8493a03fa25f1e4a7eae7678514a431d"
 GOOGLE_BENCHMARK_COMMIT     = "7d856b03047e7bf09ccc9e9878e299493541b468"
+RAPIDJSON_COMMIT            = "418331e99f859f00bdc8306f69eba67e8693c55e" # pragma: allowlist secret
+ZLIB_COMMIT                 = "cacf7f1d4e3d44d871b605da3b647f07d718623f" # pragma: allowlist secret
 
 ########################################################################
 # Bazel Rules
@@ -85,10 +86,17 @@ new_git_repository(
 )
 
 new_git_repository(
-    name = "org_librdkafka",
-    remote = "https://github.com/edenhill/librdkafka.git",
-    commit = LIBRDKAFKA_COMMIT,
-    build_file_content = """filegroup(name = "librdkafka_all", srcs = glob(["**"]), visibility = ["//visibility:public"])"""
+    name = "org_tencent_rapidjson",
+    remote = "https://github.com/Tencent/rapidjson.git",
+    commit = RAPIDJSON_COMMIT,
+    build_file = "//third_party/rapidjson/BUILD",
+)
+
+new_git_repository(
+    name = "org_madler_zlib",
+    remote = "https://github.com/madler/zlib.git",
+    commit = ZLIB_COMMIT,
+    build_file = "//third_party/zlib/BUILD",
 )
 
 # This com_google_protobuf repository is required for proto_library rule.
