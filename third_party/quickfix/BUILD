@@ -20,5 +20,5 @@ cmake_external(
        # Requires a third_party openssl dep.
        "HAVE_SSL": "OFF",
     },
-    shared]_libraries = ["libquickfix.so"],
+    shared_libraries = ["libquickfix.so"],
 )
