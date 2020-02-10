@@ -1,0 +1,13 @@
+// Copyright 2019 Stewart Henderson. All rights reserved.
+
+syntax = "proto3";
+
+package orders;
+
+message NewOrder {
+    string symbol   = 1;
+    string currency = 2;
+    double quantity = 3;
+    double price    = 4;
+    string orderId  = 5;
+}
