@@ -15,6 +15,7 @@
 * Add support for https://github.com/rigtorp/SPSCQueue
 * Add support for https://github.com/rigtorp/Seqlock
 * Add support for Hobbes language
+* Add support for https://github.com/alpacahq
 
 ## Design Items
 
