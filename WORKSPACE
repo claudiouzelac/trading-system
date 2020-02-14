@@ -28,6 +28,7 @@ GFLAGS_COMMIT               = "2e227c3daae2ea8899f49858a23f3d318ea39b57" # pragm
 DOUBLE_CONVERSION_COMMIT    = "5fa81e88ef24e735b4283b8f7454dc59693ac1fc" # pragma: allowlist secret
 ABSEIL_COMMIT               = "aa844899c937bde5d2b24f276b59997e5b668bde" # pragma: allowlist secret
 TFQUANTFINANCE_COMMIT       = "8aca1205e484e557b63f37078fe925d11c622d3b" # pragma: allowlist secret
+GOOGLE_RE2_COMMIT           = "b0a41e52137a4cae183dcf194faa007cd9a1c344" # pragma: allowlist secret
 
 ########################################################################
 # Bazel Rules
@@ -111,6 +112,12 @@ git_repository(
     name = "com_google_tf_quant_finance",
     remote = "https://github.com/google/tf-quant-finance.git",
     commit = TFQUANTFINANCE_COMMIT,
+)
+
+git_repository(
+    name = "com_google_re2",
+    remote = "https://github.com/google/re2.git",
+    commit = GOOGLE_RE2_COMMIT,
 )
 
 new_git_repository(
