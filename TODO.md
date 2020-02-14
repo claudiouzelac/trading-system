@@ -17,6 +17,7 @@
 * Add support for Hobbes language
 * Add support for https://github.com/alpacahq
 * Add support for [IEX](https://iexcloud.io/docs/api/#sse-streaming)
+* HDF5 support
 
 ## Design Items
 
