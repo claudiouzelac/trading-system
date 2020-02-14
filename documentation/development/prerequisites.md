@@ -2,7 +2,7 @@
 
 ## Linux
 
-TODO
+Linux is supported.
 
 ## Windows
 
@@ -14,6 +14,7 @@ Instructions for installing the dependencies on a system with [homebrew]() insta
 
 * `brew cask install homebrew/cask-versions/adoptopenjdk8`
 * `brew install bazel`
+* `brew install cmake`
 
 ## Author(s)
 
