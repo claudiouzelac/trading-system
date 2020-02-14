@@ -27,6 +27,7 @@ ZLIB_COMMIT                 = "cacf7f1d4e3d44d871b605da3b647f07d718623f" # pragm
 GFLAGS_COMMIT               = "2e227c3daae2ea8899f49858a23f3d318ea39b57" # pragma: allowlist secret
 DOUBLE_CONVERSION_COMMIT    = "5fa81e88ef24e735b4283b8f7454dc59693ac1fc" # pragma: allowlist secret
 ABSEIL_COMMIT               = "aa844899c937bde5d2b24f276b59997e5b668bde" # pragma: allowlist secret
+TFQUANTFINANCE_COMMIT       = "8aca1205e484e557b63f37078fe925d11c622d3b" # pragma: allowlist secret
 
 ########################################################################
 # Bazel Rules
@@ -104,6 +105,12 @@ git_repository(
     name = "com_google_absl",
     remote = "https://github.com/abseil/abseil-cpp.git",
     commit = ABSEIL_COMMIT,
+)
+
+git_repository(
+    name = "com_google_tf_quant_finance",
+    remote = "https://github.com/google/tf-quant-finance.git",
+    commit = TFQUANTFINANCE_COMMIT,
 )
 
 new_git_repository(
