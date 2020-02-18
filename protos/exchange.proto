@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package entities; 
-
-message Exchange {
-  string name = 1;
-  int32 id = 2;
-}
