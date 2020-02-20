@@ -6,7 +6,12 @@
 
 namespace trading {
 namespace pricing {
-namespace quantos {}
+namespace quantos {
+class Pricer {
+ public:
+  double price();
+};
+}  // namespace quantos
 }  // namespace pricing
 }  // namespace trading
 
