@@ -15,6 +15,12 @@
 
 enum class MatchAlgorithm {
   ProRata,
+  /**
+   * FIFO stands for First In, First Out. During FIFO, resting orders are
+   * matched in timestamp order only. All orders are matched in the timestamp
+   * order in which they were received (i.e. earliest timestamp is first,
+   * followed by next earliest, etc.).
+   */
   FirstInFirstOut,
   LastInFirstOut,
   LeadMarketMaker,

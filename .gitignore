@@ -13,3 +13,7 @@ bazel-*
 
 # CLion
 .idea
+
+# Vagrant
+.vagrant
+*.log
