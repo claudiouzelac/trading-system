@@ -10,7 +10,6 @@
 * Add [FIX8](https://github.com/fix8/fix8) support
 * Dispersion trading example
 * Price collection from ftp://ftp.cmegroup.com/
-* Add support for https://github.com/google/tf-quant-finance
 * Add support for https://github.com/rigtorp/MPMCQueue
 * Add support for https://github.com/rigtorp/SPSCQueue
 * Add support for https://github.com/rigtorp/Seqlock
