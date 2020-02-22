@@ -29,6 +29,7 @@ DOUBLE_CONVERSION_COMMIT    = "5fa81e88ef24e735b4283b8f7454dc59693ac1fc" # pragm
 ABSEIL_COMMIT               = "aa844899c937bde5d2b24f276b59997e5b668bde" # pragma: allowlist secret
 TFQUANTFINANCE_COMMIT       = "8aca1205e484e557b63f37078fe925d11c622d3b" # pragma: allowlist secret
 GOOGLE_RE2_COMMIT           = "b0a41e52137a4cae183dcf194faa007cd9a1c344" # pragma: allowlist secret
+RULES_R_COMMIT              = "3d7c15f8050081aabe2b3886517c1328253a799e" # pragma: allowlist secret
 
 ########################################################################
 # Bazel Rules
@@ -59,6 +60,12 @@ git_repository(
     name = "rules_python",
     remote = "https://github.com/bazelbuild/rules_python.git",
     commit = RULES_PYTHON_COMMIT,
+)
+
+git_repository(
+    name = "com_grail_rules_r",
+    remote = "https://github.com/grailbio/rules_r.git",
+    commit = RULES_R_COMMIT,
 )
 
 ########################################################################
@@ -182,6 +189,7 @@ load("@build_stack_rules_proto//cpp:deps.bzl", "cpp_proto_compile")
 load("@build_stack_rules_proto//python:deps.bzl", "python_proto_library")
 load("@rules_python//python:pip.bzl", "pip_repositories", "pip3_import")
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
+load("@com_grail_rules_r//R:dependencies.bzl", "r_register_toolchains", "r_rules_dependencies")
 
 pip_repositories()
 protobuf_deps()
@@ -199,3 +207,5 @@ pip3_import(
 load("@protobuf_py_deps//:requirements.bzl", protobuf_pip_install = "pip_install")
 
 protobuf_pip_install()
+r_rules_dependencies()
+r_register_toolchains()

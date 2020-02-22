@@ -1,8 +1,7 @@
 # TODO Items
 
-* Add support for languages (C++, Python, and Java)
+* Add support for languages (Python, and Java)
 * Add contribution guidelines
-* Add [R Integration](https://github.com/grailbio/rules_r)
 * [readthedocs](https://readthedocs.org/)
 * Add contribution guidelines
 * Add [glog](http://rpg.ifi.uzh.ch/docs/glog.html)
