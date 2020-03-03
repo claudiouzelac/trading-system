@@ -28,6 +28,15 @@ repos:
         ]
     -   id: requirements-txt-fixer
     -   id: trailing-whitespace
+- repo: https://github.com/jumanjihouse/pre-commit-hooks
+  sha: 1.11.2
+  hooks:
+    - id: forbid-binary
+    - id: git-dirty  # Configure in .gitignore
+    - id: markdownlint # Configure in .mdlrc
+    - id: script-must-have-extension
+    - id: script-must-not-have-extension
+    - id: shellcheck
 -   repo: meta
     hooks:
     -   id: check-useless-excludes
