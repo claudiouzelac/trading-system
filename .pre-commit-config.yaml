@@ -16,7 +16,10 @@ repos:
     -   id: check-json
     -   id: detect-private-key
     -   id: end-of-file-fixer
+    -   id: check-symlinks
+    -   id: check-vcs-permalinks
     -   id: requirements-txt-fixer
+    -   id: forbid-new-submodules
     -   id: pretty-format-json
         args: [
           '--autofix',
